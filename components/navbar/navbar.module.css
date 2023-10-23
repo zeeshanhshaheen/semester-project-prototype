@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    background-color: #242424;
+}
+
+.navbar_list {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.navbar_logo {
+    width: 100px;
+    height: auto;
+    margin: 0.5rem 1rem;
+}
+
+.navbar_logo img {
+    object-fit: contain;
+    width: 100px;
+}
+
+.navbar_list li {
+    margin: 0 2rem;
+    cursor: pointer;
+}
