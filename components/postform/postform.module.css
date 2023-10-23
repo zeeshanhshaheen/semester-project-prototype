@@ -1,0 +1,23 @@
+.container {
+
+}
+
+.postform {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_username {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_avatar {
+    display: flex;
+    flex-direction: column;
+}

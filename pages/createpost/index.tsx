@@ -8,14 +8,16 @@ import styles from "./createpost.module.css";
 
 const post: PostProps = {
   postId: 1,
-  accuracy: Math.random(),
+  accuracy: 0.3,
   userName: "Christian",
   content:
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores ",
+  imageUrl:
+    "https://seafile.zfn.uni-bremen.de/seafhttp/files/4d4eea6b-489f-4cca-bf2f-2cd1e6566a38/P1040557.JPG",
 };
 
 const CreatePost = () => {
-  const [postData, setPostData] = useState<PostProps | null>(null);
+  const [postData, setPostData] = useState<PostProps | null>(post);
 
   const handleSubmit = (formData: PostProps) => {
     setPostData(formData);
@@ -24,11 +26,11 @@ const CreatePost = () => {
   return (
     <>
       <Navbar />
-      <Grid container spacing={2}>
-        <Grid item xs={6}>
+      <Grid container spacing={2} className={styles.page_container}>
+        <Grid item xs={6} className={styles.form_container}>
           <PostForm onSubmit={handleSubmit} />
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={6} className={styles.preview_container}>
           <h1>Preview of post</h1>
           {postData ? (
             <Post
@@ -37,7 +39,7 @@ const CreatePost = () => {
               accuracy={postData.accuracy}
               content={postData.content}
               userName={postData.userName}
-              /*imageUrl={postData.imageUrl}*/
+              imageUrl={postData.imageUrl}
             />
           ) : (
             <p>No post submitted yet.</p>

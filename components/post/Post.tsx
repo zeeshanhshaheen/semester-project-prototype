@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
+import { Alert } from "@mui/material";
 
 import styles from "./post.module.css";
+import { WarningAmber } from "@mui/icons-material";
 
 export interface PostProps {
   postId: number;
@@ -19,9 +21,33 @@ const Post = ({ postId, userName, accuracy, imageUrl, content }: PostProps) => {
         <p>{userName}</p>
         <AccountCircleIcon height={20} width={20} />
       </div>
-      {imageUrl && <Image src={imageUrl} alt="post image" />}
-      <div>
-        <p>{content}</p>
+      <div className={styles.post_content}>
+        {imageUrl && (
+          <div className={styles.post_image}>
+            <Image
+              src={imageUrl}
+              alt="post image"
+              sizes="100vw"
+              width={400}
+              height={300}
+            />
+          </div>
+        )}
+        {accuracy < 0.5 && (
+          <div className={styles.disclaimer}>
+            <Alert
+              icon={<WarningAmber fontSize="inherit" />}
+              variant="outlined"
+              severity="error"
+            >
+              The real content is different to what is shown this might be scam.
+              Stay alerted wehen interacting wit it!
+            </Alert>
+          </div>
+        )}
+        <div className={styles.post_text}>
+          <p>{content}</p>
+        </div>
       </div>
     </div>
   );
