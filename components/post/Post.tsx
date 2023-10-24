@@ -76,7 +76,7 @@ export default function Post({
           alt="user images"
         />
       )}
-      {accuracy < 0.5 && (
+      {/*accuracy < 0.5 && (
         <div className={styles.disclaimer}>
           <Alert
             icon={<WarningAmber fontSize="inherit" />}
@@ -87,7 +87,7 @@ export default function Post({
             Stay alerted wehen interacting wit it!
           </Alert>
         </div>
-      )}
+      )*/}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {content}

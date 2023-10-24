@@ -21,3 +21,11 @@
     display: flex;
     flex-direction: column;
 }
+
+/*.scam_warning p {
+    color: red;
+    font-size: small;
+    font-weight: bold;
+    width: 360px;
+    height: auto;
+}*/
