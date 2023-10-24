@@ -12,8 +12,7 @@ const post: PostProps = {
   userName: "Christian",
   content:
     "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores ",
-  imageUrl:
-    "https://seafile.zfn.uni-bremen.de/seafhttp/files/4d4eea6b-489f-4cca-bf2f-2cd1e6566a38/P1040557.JPG",
+  imageUrl: "https://seafile.zfn.uni-bremen.de/f/cad0fd6045bf409d9599/?dl=1",
 };
 
 const CreatePost = () => {

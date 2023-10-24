@@ -72,22 +72,24 @@ export default function Post({
         <CardMedia
           component="img"
           height="194"
-          image={imageUrl}
+          src={imageUrl}
           alt="user images"
+          loading="lazy"
         />
       )}
-      {/*accuracy < 0.5 && (
+      {accuracy < 0.5 && (
         <div className={styles.disclaimer}>
           <Alert
             icon={<WarningAmber fontSize="inherit" />}
             variant="outlined"
             severity="error"
+            sx={{ justifyContent: "center" }}
           >
             The real content is different to what is shown this might be scam.
             Stay alerted wehen interacting wit it!
           </Alert>
         </div>
-      )*/}
+      )}
       <CardContent>
         <Typography variant="body2" color="text.secondary">
           {content}
