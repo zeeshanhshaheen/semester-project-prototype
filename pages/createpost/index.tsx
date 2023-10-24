@@ -16,7 +16,7 @@ const post: PostProps = {
 };
 
 const CreatePost = () => {
-  const [postData, setPostData] = useState<PostProps | null>(post);
+  const [postData, setPostData] = useState<PostProps | null>(null);
 
   const handleSubmit = (formData: PostProps) => {
     setPostData(formData);

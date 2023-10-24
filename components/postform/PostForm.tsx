@@ -9,6 +9,7 @@ import {
 import { PostProps } from "../post/Post";
 
 import styles from "./postform.module.css";
+import { time } from "console";
 
 export interface PostFormProps {
   onSubmit: (post: PostProps) => void;
@@ -19,7 +20,7 @@ const PostForm = ({ onSubmit }: PostFormProps) => {
     postId: Math.floor(Math.random()),
     userName: "",
     content: "",
-    accuracy: Math.random(),
+    accuracy: -1,
   });
 
   const handleChange = (
@@ -28,6 +29,13 @@ const PostForm = ({ onSubmit }: PostFormProps) => {
     setForm((form) => ({
       ...form,
       [e.target.name]: e.target.value,
+    }));
+  };
+
+  const calculateAccuracy = () => {
+    setForm((form) => ({
+      ...form,
+      accuracy: Math.random(),
     }));
   };
 
@@ -76,17 +84,21 @@ const PostForm = ({ onSubmit }: PostFormProps) => {
                 accept="image/png, image/jpeg"
               />
             </div>
-            <Button type="submit">Submit</Button>
+            <Button type="submit" onClick={calculateAccuracy}>
+              Submit
+            </Button>
           </div>
         </form>
         <div className={styles.scam_warning}>
-          <Alert severity="warning" color="error">
-            <AlertTitle>Warning</AlertTitle>
-            The added content was detected to be similar to past content which
-            was flagged to be scam. If not further edited{" "}
-            <strong>a disclaimer is shown</strong> with your post. If you want
-            to proceed click the submit button again.
-          </Alert>
+          {form.accuracy >= 0 && form.accuracy < 0.5 && (
+            <Alert severity="warning" color="error">
+              <AlertTitle>Warning</AlertTitle>
+              The added content was detected to be similar to past content which
+              was flagged to be scam. If not further edited{" "}
+              <strong>a disclaimer is shown</strong> with your post. If you want
+              to proceed click the submit button again.
+            </Alert>
+          )}
         </div>
       </div>
     </div>

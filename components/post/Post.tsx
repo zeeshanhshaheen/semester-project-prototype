@@ -51,6 +51,8 @@ export default function Post({
   const [date, setDate] = React.useState(new Date());
   const userAvatar = userName.charAt(0).toUpperCase();
 
+  console.log("post", accuracy);
+
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
@@ -106,7 +108,7 @@ export default function Post({
       <Typography variant="subtitle2" gutterBottom>
         Trust Rate:
       </Typography>
-      <BorderLinearProgress variant="determinate" value={10} />
+      <BorderLinearProgress variant="determinate" value={accuracy * 100} />
     </Card>
   );
 }
