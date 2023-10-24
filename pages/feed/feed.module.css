@@ -1,0 +1,17 @@
+.feedContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f7f8fa;
+}
+
+.feedHeader {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.postMargin {
+    margin-bottom: 20px;
+}

@@ -1,18 +1,18 @@
-import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
-import Navbar from "@/components/navbar/Navbar";
-import PostForm from "@/components/postform/PostForm";
-import Post, { PostProps } from "@/components/post/Post";
-
-import styles from "./createpost.module.css";
+import React, { useState } from 'react';
+import Grid from '@mui/material/Grid';
+import Navbar from '@/components/navbar/Navbar';
+import PostForm from '@/components/postform/PostForm';
+import Post, { PostProps } from '@/components/post/Post';
+import styles from './createpost.module.css';
+import { Typography } from '@mui/material';
 
 const post: PostProps = {
   postId: 1,
   accuracy: 0.3,
-  userName: "Christian",
+  userName: 'Christian',
   content:
-    "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores ",
-  imageUrl: "https://seafile.zfn.uni-bremen.de/f/cad0fd6045bf409d9599/?dl=1",
+    'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores ',
+  imageUrl: 'https://seafile.zfn.uni-bremen.de/f/cad0fd6045bf409d9599/?dl=1',
 };
 
 const CreatePost = () => {
@@ -30,7 +30,7 @@ const CreatePost = () => {
           <PostForm onSubmit={handleSubmit} />
         </Grid>
         <Grid item xs={6} className={styles.preview_container}>
-          <h1>Preview of post</h1>
+          <Typography variant='h6'>Preview of post</Typography>
           {postData ? (
             <Post
               key={postData.postId}
@@ -41,7 +41,7 @@ const CreatePost = () => {
               imageUrl={postData.imageUrl}
             />
           ) : (
-            <p>No post submitted yet.</p>
+            <Typography>No post submitted yet.</Typography>
           )}
         </Grid>
       </Grid>
