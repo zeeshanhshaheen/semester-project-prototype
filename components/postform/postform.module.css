@@ -1,0 +1,31 @@
+.container {
+
+}
+
+.postform {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_username {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_content {
+    display: flex;
+    flex-direction: column;
+}
+
+.postform_avatar {
+    display: flex;
+    flex-direction: column;
+}
+
+/*.scam_warning p {
+    color: red;
+    font-size: small;
+    font-weight: bold;
+    width: 360px;
+    height: auto;
+}*/

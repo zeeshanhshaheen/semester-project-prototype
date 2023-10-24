@@ -1,0 +1,43 @@
+.post {
+    display: flex;
+    flex-direction: row;
+}
+
+.post_user {
+    display: flex;
+    flex-direction: column;
+    padding: 0 0.5rem 0 0;
+}
+
+.post_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 1rem;
+}
+
+.post_image {
+    object-fit: contain;
+}
+
+.post_text {
+    width: 400px;
+}
+
+.disclaimer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.disclaimer svg {
+    margin: 0 0.5rem
+}
+
+.disclaimer p{
+    color: red;
+    font-size: small;
+    font-weight: bold;
+    width: 360px;
+    height: auto;
+}
