@@ -3,7 +3,7 @@ import Post from '@/components/post/Post';
 import styles from './feed.module.css';
 import { Typography } from '@mui/material';
 import Navbar from '@/components/navbar/Navbar';
-import { dummyData } from './dummyData';
+import { dummyData } from '../../data/dummyData';
 
 const Feed: React.FC = () => {
   return (
