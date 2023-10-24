@@ -10,7 +10,7 @@ const Feed: React.FC = () => {
     <>
       <Navbar />
       <div className={styles.feedContainer}>
-        <Typography variant='h1' className={styles.feedHeader}>
+        <Typography variant='h5' className={styles.feedHeader}>
           All Posts
         </Typography>
         {dummyData.map(postData => (
