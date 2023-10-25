@@ -1,26 +1,68 @@
-.container {
-
+.form_container {
+    padding-top: 20px;
+    /*background-color: #fffcf2;*/
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
 }
 
 .postform {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-radius: 4px;
 }
 
 .postform_username {
     display: flex;
     flex-direction: column;
+    background-color: var(--color-secondary);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    max-width: 450px;
+    width: 100%;
 }
 
 .postform_content {
     display: flex;
     flex-direction: column;
+    background-color: var(--color-secondary);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    max-width: 450px;
+    width: 100%;
+}
+
+.postform_content label {
+    color: var(--color-primary);
+    margin-left: 5px;
 }
 
 .postform_avatar {
     display: flex;
     flex-direction: column;
+    background-color: var(--color-secondary);
+    margin-bottom: 20px;
+    border-radius: 4px;
+    max-width: 450px;
+    width: 100%;
 }
+
+.postform_avatar label {
+    color: var(--color-primary);
+    margin-left: 5px;
+}
+
+.postform button {
+    background-color: var(--color-secondary);
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+    margin-bottom: 20px;
+}
+
 
 /*.scam_warning p {
     color: red;

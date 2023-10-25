@@ -2,30 +2,31 @@
 
 /* Overall page styles */
 .page_container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 100px;
-  height: 100%;
-  background-color: white;
-}
-
-/* Left side - Form container */
-.form_container {
-  flex: 1;
-  padding: 20px;
-  background-color: #ff1515;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
-
-/* Right side - Preview container */
-.preview_container {
-  flex: 1;
-  padding: 20px;
-  background-color: #1c63e7;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-}
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 75vh;
+    padding-top: 19px;
+    margin: 5px;
+  }
+  
+  /* Left side - Form container */
+  .form_container {
+    flex: 1;
+    /* background-color: #ff1515; */
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+  }
+  
+  /* Right side - Preview container */
+  .preview_container {
+    flex: 1;
+    padding: 20px;
+    /* background-color: #1c63e7; */
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin: 5px;
+  }

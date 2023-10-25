@@ -22,15 +22,19 @@ const CreatePost = () => {
     setPostData(formData);
   };
 
+  const handleDummy = () => {
+    setPostData(post);
+  };
+
   return (
     <>
       <Navbar />
       <Grid container spacing={2} className={styles.page_container}>
         <Grid item xs={6} className={styles.form_container}>
-          <PostForm onSubmit={handleSubmit} />
+          <PostForm onSubmit={handleSubmit} loadDummy={handleDummy} />
         </Grid>
         <Grid item xs={6} className={styles.preview_container}>
-          <Typography variant='h6'>Preview of post</Typography>
+          <Typography variant="h6">Preview of post</Typography>
           {postData ? (
             <Post
               key={postData.postId}

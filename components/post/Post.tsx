@@ -1,12 +1,19 @@
 import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
-import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
+import {
+  Alert,
+  Card,
+  CardHeader,
+  CardMedia,
+  CardContent,
+  CardActions,
+  Avatar,
+  IconButton,
+  Typography,
+  Menu,
+  styled,
+  MenuItem,
+  Tooltip,
+} from '@mui/material/';
 import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
@@ -14,12 +21,10 @@ import MoreVertIcon from '@mui/icons-material/MoreVert';
 import LinearProgress, {
   linearProgressClasses,
 } from '@mui/material/LinearProgress';
-import { Menu, styled, MenuItem } from '@mui/material';
-import { Alert } from '@mui/material';
 import { WarningAmber } from '@mui/icons-material';
+import ReportDialog from '../dialog/Dialog';
 
 import styles from './post.module.css';
-import ReportDialog from '../dialog/Dialog';
 
 export interface PostProps {
   postId: number;
@@ -96,14 +101,12 @@ export default function Post({
     handleDialogOpen();
   };
 
-  console.log('post', accuracy);
-
   return (
     <>
       <ReportDialog
         isOpen={isDialogOpen}
         onClose={handleDialogClose}
-        onSubmit={value => {
+        onSubmit={(value) => {
           if (typeof value === 'string') {
             console.log('Report submitted with text:', value);
           } else {
@@ -113,16 +116,16 @@ export default function Post({
         dialogType={dialogType}
       />
 
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, width: '100%' }}>
         <CardHeader
           avatar={
-            <Avatar sx={{ bgcolor: red[500] }} aria-label='recipe'>
+            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
               {userAvatar}
             </Avatar>
           }
           action={
             <div>
-              <IconButton aria-label='settings' onClick={handleMenuOpen}>
+              <IconButton aria-label="settings" onClick={handleMenuOpen}>
                 <MoreVertIcon />
               </IconButton>
               <Menu
@@ -143,43 +146,48 @@ export default function Post({
         {/*<div></div>*/}
         {imageUrl && (
           <CardMedia
-            component='img'
-            height='194'
+            component="img"
+            height="194px"
             src={imageUrl}
-            alt='user images'
-            loading='lazy'
+            alt="user images"
+            loading="lazy"
           />
         )}
         {accuracy < 0.5 && (
           <div className={styles.disclaimer}>
             <Alert
-              icon={<WarningAmber fontSize='inherit' />}
-              variant='outlined'
-              severity='error'
+              icon={<WarningAmber fontSize="inherit" />}
+              variant="outlined"
+              severity="error"
               sx={{ justifyContent: 'center' }}
             >
               The real content is different to what is shown this might be scam.
-              Stay alerted wehen interacting wit it!
+              Stay alerted when interacting with it!
             </Alert>
           </div>
         )}
         <CardContent>
-          <Typography variant='body2' color='text.secondary'>
+          <Typography variant="body2" color="text.secondary">
             {content}
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label='add to favorites'>
+          <IconButton aria-label="add to favorites">
             <FavoriteIcon />
           </IconButton>
-          <IconButton aria-label='share'>
+          <IconButton aria-label="share">
             <ShareIcon />
           </IconButton>
         </CardActions>
-        <Typography variant='subtitle2' gutterBottom>
-          Trust Rate:
+        <Typography variant="caption" gutterBottom marginLeft="5px">
+          {`Trust Rate: ${Math.floor(accuracy * 100)}%`}
         </Typography>
-        <BorderLinearProgress variant='determinate' value={accuracy * 100} />
+        <BorderLinearProgress variant="determinate" value={accuracy * 100} />
+        {/* Tooltip Accuracy
+        <Tooltip title={`Accuracy: ${accuracy * 100}%`} placement="top">
+          <BorderLinearProgress variant="determinate" value={accuracy * 100} />
+        </Tooltip>
+        */}
       </Card>
     </>
   );
