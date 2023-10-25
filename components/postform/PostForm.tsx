@@ -13,9 +13,10 @@ import styles from "./postform.module.css";
 
 export interface PostFormProps {
   onSubmit: (post: PostProps) => void;
+  loadDummy: () => void;
 }
 
-const PostForm = ({ onSubmit }: PostFormProps) => {
+const PostForm = ({ onSubmit, loadDummy }: PostFormProps) => {
   const [form, setForm] = useState<PostProps>({
     postId: Math.floor(Math.random()),
     userName: "",
@@ -99,6 +100,11 @@ const PostForm = ({ onSubmit }: PostFormProps) => {
               to proceed click the submit button again.
             </Alert>
           )}
+        </div>
+        <div>
+          <Button type="button" onClick={loadDummy}>
+            Show dummy data with picture
+          </Button>
         </div>
       </div>
     </div>
