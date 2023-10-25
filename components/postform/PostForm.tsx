@@ -74,6 +74,7 @@ const PostForm = ({ onSubmit, loadDummy }: PostFormProps) => {
                 name="content"
                 placeholder="what is happening?"
                 required
+                minRows={4}
               />
             </div>
             <div className={styles.postform_avatar}>

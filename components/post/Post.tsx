@@ -162,7 +162,7 @@ export default function Post({
               sx={{ justifyContent: 'center' }}
             >
               The real content is different to what is shown this might be scam.
-              Stay alerted wehen interacting wit it!
+              Stay alerted when interacting with it!
             </Alert>
           </div>
         )}
@@ -180,7 +180,7 @@ export default function Post({
           </IconButton>
         </CardActions>
         <Typography variant="caption" gutterBottom marginLeft="5px">
-          {`Trust Rate: ${accuracy * 100}%`}
+          {`Trust Rate: ${Math.floor(accuracy * 100)}%`}
         </Typography>
         <BorderLinearProgress variant="determinate" value={accuracy * 100} />
         {/* Tooltip Accuracy

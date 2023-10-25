@@ -17,7 +17,9 @@ html,
   
     --font-base: 'Open Sans', sans-serif;
     --font-alt: 'Noto Sans JP', sans-serif;
-    --color-black: #0c0c0c;
+    --color-bg: #403d39;
+    --color-primary: #252422;
+    --color-secondary: #ccc5b9;
     --color-white: #FFFFFF;
     --color-golden: #DCCA87;
   }
