@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import {
   TextField,
   Button,
@@ -6,10 +6,10 @@ import {
   Alert,
   AlertTitle,
   Typography,
-} from "@mui/material";
-import { PostProps } from "../post/Post";
+} from '@mui/material';
+import { PostProps } from '../post/Post';
 
-import styles from "./postform.module.css";
+import styles from './postform.module.css';
 
 export interface PostFormProps {
   onSubmit: (post: PostProps) => void;
@@ -19,8 +19,8 @@ export interface PostFormProps {
 const PostForm = ({ onSubmit, loadDummy }: PostFormProps) => {
   const [form, setForm] = useState<PostProps>({
     postId: Math.floor(Math.random()),
-    userName: "",
-    content: "",
+    userName: '',
+    content: '',
     accuracy: -1,
   });
 
@@ -95,7 +95,7 @@ const PostForm = ({ onSubmit, loadDummy }: PostFormProps) => {
             <Alert severity="warning" color="error">
               <AlertTitle>Warning</AlertTitle>
               The added content was detected to be similar to past content which
-              was flagged to be scam. If not further edited{" "}
+              was flagged to be scam. If not further edited{' '}
               <strong>a disclaimer is shown</strong> with your post. If you want
               to proceed click the submit button again.
             </Alert>

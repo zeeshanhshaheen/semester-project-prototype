@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react';
 import {
   Alert,
   Card,
@@ -13,18 +13,18 @@ import {
   styled,
   MenuItem,
   Tooltip,
-} from "@mui/material/";
-import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+} from '@mui/material/';
+import { red } from '@mui/material/colors';
+import FavoriteIcon from '@mui/icons-material/Favorite';
+import ShareIcon from '@mui/icons-material/Share';
+import MoreVertIcon from '@mui/icons-material/MoreVert';
 import LinearProgress, {
   linearProgressClasses,
-} from "@mui/material/LinearProgress";
-import { WarningAmber } from "@mui/icons-material";
-import ReportDialog from "../dialog/Dialog";
+} from '@mui/material/LinearProgress';
+import { WarningAmber } from '@mui/icons-material';
+import ReportDialog from '../dialog/Dialog';
 
-import styles from "./post.module.css";
+import styles from './post.module.css';
 
 export interface PostProps {
   postId: number;
@@ -43,16 +43,16 @@ export default function Post({
 }: PostProps) {
   const [date, setDate] = React.useState(new Date());
   const userAvatar = userName.charAt(0).toUpperCase();
-  const [dialogType, setDialogType] = React.useState<"report" | "accuracy">(
-    "report"
+  const [dialogType, setDialogType] = React.useState<'report' | 'accuracy'>(
+    'report'
   );
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const [isDialogOpen, setDialogOpen] = React.useState(false);
 
   function getBarColorBasedOnValue(value: any) {
-    if (value < 0.4) return "red";
-    if (value < 0.7) return "yellow";
-    return "green";
+    if (value < 0.4) return 'red';
+    if (value < 0.7) return 'yellow';
+    return 'green';
   }
 
   const BorderLinearProgress = styled(LinearProgress)(({ theme }) => ({
@@ -60,14 +60,14 @@ export default function Post({
     borderRadius: 5,
     [`&.${linearProgressClasses.colorPrimary}`]: {
       backgroundColor:
-        theme.palette.grey[theme.palette.mode === "light" ? 200 : 800],
+        theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
     },
     [`& .${linearProgressClasses.bar}`]: {
       borderRadius: 5,
       backgroundColor:
-        theme.palette.mode === "light"
+        theme.palette.mode === 'light'
           ? getBarColorBasedOnValue(accuracy)
-          : "#308fe8",
+          : '#308fe8',
     },
   }));
 
@@ -80,7 +80,7 @@ export default function Post({
   };
 
   const handleReportClick = () => {
-    setDialogType("report");
+    setDialogType('report');
     handleDialogOpen();
   };
 
@@ -93,11 +93,11 @@ export default function Post({
   };
 
   const handleReportSubmit = (reportText: string) => {
-    console.log("Report submitted with text:", reportText);
+    console.log('Report submitted with text:', reportText);
   };
 
   const handleAccuracyClick = () => {
-    setDialogType("accuracy");
+    setDialogType('accuracy');
     handleDialogOpen();
   };
 
@@ -107,10 +107,10 @@ export default function Post({
         isOpen={isDialogOpen}
         onClose={handleDialogClose}
         onSubmit={(value) => {
-          if (typeof value === "string") {
-            console.log("Report submitted with text:", value);
+          if (typeof value === 'string') {
+            console.log('Report submitted with text:', value);
           } else {
-            console.log("Accuracy rating given:", value);
+            console.log('Accuracy rating given:', value);
           }
         }}
         dialogType={dialogType}
@@ -159,7 +159,7 @@ export default function Post({
               icon={<WarningAmber fontSize="inherit" />}
               variant="outlined"
               severity="error"
-              sx={{ justifyContent: "center" }}
+              sx={{ justifyContent: 'center' }}
             >
               The real content is different to what is shown this might be scam.
               Stay alerted wehen interacting wit it!

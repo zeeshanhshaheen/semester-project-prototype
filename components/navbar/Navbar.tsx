@@ -7,14 +7,14 @@ import Button from '@mui/material/Button';
 
 const Navbar = () => {
   return (
-    <AppBar position='static'>
+    <AppBar position="static">
       <Toolbar>
-        <Typography variant='h6' style={{ flexGrow: 1 }}>
+        <Typography variant="h6" style={{ flexGrow: 1 }}>
           Prototype
         </Typography>
-        <Link href='/' passHref>
+        <Link href="/" passHref>
           <Button
-            color='inherit'
+            color="inherit"
             sx={{
               textDecoration: 'none',
               textTransform: 'none',
@@ -24,9 +24,9 @@ const Navbar = () => {
             Home
           </Button>
         </Link>
-        <Link href='/createpost' passHref>
+        <Link href="/createpost" passHref>
           <Button
-            color='inherit'
+            color="inherit"
             sx={{
               textDecoration: 'none',
               textTransform: 'none',
@@ -36,9 +36,9 @@ const Navbar = () => {
             Create Post
           </Button>
         </Link>
-        <Link href='/feed' passHref>
+        <Link href="/feed" passHref>
           <Button
-            color='inherit'
+            color="inherit"
             sx={{
               textDecoration: 'none',
               textTransform: 'none',
