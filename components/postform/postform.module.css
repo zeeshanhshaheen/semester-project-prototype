@@ -1,25 +1,37 @@
 .container {
-
 }
 
 .postform {
     display: flex;
     flex-direction: column;
+    background-color: #fffcf2;
+    justify-content: space-between;
 }
 
 .postform_username {
     display: flex;
     flex-direction: column;
+    background-color: #ccc5b9;
 }
 
 .postform_content {
     display: flex;
     flex-direction: column;
+    background-color: #ccc5b9;
 }
 
 .postform_avatar {
     display: flex;
     flex-direction: column;
+    background-color: #ccc5b9;
+}
+
+.postform button {
+    background-color: #eb5e28;
+    width: 200px;
+    justify-self: center;
+    align-self: center;
+
 }
 
 /*.scam_warning p {
