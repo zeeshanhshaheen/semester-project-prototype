@@ -48,7 +48,7 @@ const PostForm = ({ onSubmit, loadDummy }: PostFormProps) => {
   return (
     <div className={styles.container}>
       <Typography variant="h5">Create Post/Ad</Typography>
-      <div>
+      <div className={styles.form_container}>
         <form onSubmit={handleSubmit}>
           <div className={styles.postform}>
             <div className={styles.postform_username}>

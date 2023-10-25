@@ -116,7 +116,7 @@ export default function Post({
         dialogType={dialogType}
       />
 
-      <Card sx={{ maxWidth: 345 }}>
+      <Card sx={{ maxWidth: 345, width: '100%' }}>
         <CardHeader
           avatar={
             <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
